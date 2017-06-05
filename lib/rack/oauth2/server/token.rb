@@ -23,6 +23,8 @@ module Rack
             ClientCredentials
           when 'refresh_token'
             RefreshToken
+          when 'social_login'
+            SocialLogin
           when URN::GrantType::JWT_BEARER
             JWTBearer
           when URN::GrantType::SAML2_BEARER
@@ -84,6 +86,7 @@ require 'rack/oauth2/server/token/authorization_code'
 require 'rack/oauth2/server/token/password'
 require 'rack/oauth2/server/token/client_credentials'
 require 'rack/oauth2/server/token/refresh_token'
+require 'rack/oauth2/server/token/social_login'
 require 'rack/oauth2/server/token/jwt_bearer'
 require 'rack/oauth2/server/token/saml2_bearer'
 require 'rack/oauth2/server/token/extension'
