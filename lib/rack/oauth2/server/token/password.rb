@@ -10,12 +10,12 @@ module Rack
           end
 
           class Request < Token::Request
-            attr_required :username, :password
+            attr_required :login, :password
 
             def initialize(env)
               super
               @grant_type = :password
-              @username   = params['username']
+              @username   = params['login']
               @password   = params['password']
               attr_missing!
             end

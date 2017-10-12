@@ -3,7 +3,7 @@ module Rack
     class AccessToken
       include AttrRequired, AttrOptional
       attr_required :access_token, :token_type, :httpclient
-      attr_optional :refresh_token, :expires_in, :scope
+      attr_optional :refresh_token, :expires_in, :created_at, :scope
       attr_accessor :raw_attributes
       delegate :get, :patch, :post, :put, :delete, to: :httpclient
 
@@ -27,6 +27,7 @@ module Rack
           refresh_token: refresh_token,
           token_type: token_type,
           expires_in: expires_in,
+          created_at: created_at,
           scope: Array(scope).join(' ')
         }
       end
