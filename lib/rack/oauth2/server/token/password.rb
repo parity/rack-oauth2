@@ -15,7 +15,7 @@ module Rack
             def initialize(env)
               super
               @grant_type = :password
-              @username   = params['login']
+              @login   = params['login']
               @password   = params['password']
               attr_missing!
             end

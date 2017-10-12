@@ -11,7 +11,7 @@ describe Rack::OAuth2::Server::Token::Password do
     {
       grant_type: 'password',
       client_id: 'client_id',
-      username: 'nov',
+      login: 'nov',
       password: 'secret'
     }
   end
@@ -22,7 +22,7 @@ describe Rack::OAuth2::Server::Token::Password do
   its(:body)         { should include '"access_token":"access_token"' }
   its(:body)         { should include '"token_type":"bearer"' }
 
-  [:username, :password].each do |required|
+  [:login, :password].each do |required|
     context "when #{required} is missing" do
       before do
         params.delete_if do |key, value|

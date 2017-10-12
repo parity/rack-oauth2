@@ -3,7 +3,7 @@ module Rack
     class Client
       class Grant
         class Password < Grant
-          attr_required :username, :password
+          attr_required :login, :password
         end
       end
     end

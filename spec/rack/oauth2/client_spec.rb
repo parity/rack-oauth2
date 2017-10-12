@@ -65,7 +65,7 @@ describe Rack::OAuth2::Client do
   end
 
   describe '#resource_owner_credentials=' do
-    before  { client.resource_owner_credentials = 'username', 'password' }
+    before  { client.resource_owner_credentials = 'login', 'password' }
     subject { client.instance_variable_get('@grant') }
     it { should be_instance_of Rack::OAuth2::Client::Grant::Password }
   end
