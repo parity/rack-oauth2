@@ -8,7 +8,7 @@ module Rack
         class Unauthorized < Abstract::Unauthorized
           def finish
             super do |response|
-              response.header['WWW-Authenticate'] = 'Basic realm="OAuth2 Token Endpoint"'
+              response.header['WWW-Authenticate'] = 'xBasic realm="OAuth2 Token Endpoint"'
             end
           end
         end
