@@ -33,6 +33,7 @@ module Rack
           attr_reader :access_token
 
           def initialize(env)
+            env["HTTP_AUTHORIZATION"] ||= env["HTTP_AUTHORIZATION_BEARER"]
             @env = env
             @auth_header = Rack::Auth::AbstractRequest.new(env)
           end
